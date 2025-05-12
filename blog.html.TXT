@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Paddleboarding Spots in Traverse City | Half Price Paddle</title>
+    <meta name="description" content="Discover the top paddleboarding spots in Traverse City, Michigan. Find hidden gems and popular routes for your adventure.">
+	<meta name="keywords" content="Traverse City paddleboard rental, cheap inflatable paddleboard, paddleboard for rent Traverse City">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">Half Price Paddle</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog.html">Places to Paddleboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    
+    <section class="blog-header">
+        <div class="container">
+            <h1>Explore Traverse City’s Best Paddling Spots</h1>
+            <p>Discover the best places to paddleboard in Traverse City, Michigan.</p>
+        </div>
+    </section>
+
+    
+    <section class="blog-posts">
+        <div class="container">
+            
+            <div class="post" id="elk-river">
+                <h2>Elk River: A Serene Escape</h2>
+                <img src="images/sleeping-bear-dunes-paddleboarding.jpg" alt="Paddleboarding in the Sleeping Bear Dunes near Traverse City">
+                <p>Elk River offers calm waters surrounded by towering pines and wildlife. Perfect for a quiet morning paddle.</p>
+                <a href="#elk-river" class="read-more">Read More</a>
+            </div>
+
+            
+            <div class="post" id="grand-traverse-bay">
+                <h2>Grand Traverse Bay: Urban Adventures</h2>
+                <img src="images/grand-traverse-bay-paddle.jpg" alt="Grand Traverse Bay Stand Up Paddleboard Rentals">
+                <p>Explore the bustling Grand Traverse Bay for a mix of city views and open water.</p>
+                <a href="#grand-traverse-bay" class="read-more">Read More</a>
+            </div>
+
+            
+            <div class="post" id="boardman-river">
+                <h2>Boardman River: Family-Friendly Paddling</h2>
+                <img src="images/boardman-river-family-paddle.jpg" alt="Boardman River Paddleboarding Rental">
+                <p>Family-friendly routes and gentle currents make Boardman River ideal for beginners.</p>
+                <a href="#boardman-river" class="read-more">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    
+    <button onclick="topFunction()" id="back-to-top">↑ Back to Top</button>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 Half Price Paddle. All rights reserved.</p>
+            <p>Contact: <a href="mailto:wordena16@gmail.com">wordena16@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple scroll-to-top button
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+</html>

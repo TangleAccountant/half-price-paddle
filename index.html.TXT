@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Half Price Paddle - Affordable Paddleboard Rentals in Traverse City</title>
+    <meta name="description" content="Rent inflatable paddleboards in Traverse City at half the cost! Find the best spots and book directly from my calendar.">
+	<meta name="keywords" content="Traverse City paddleboard rental, cheap inflatable paddleboard, paddleboard for rent Traverse City">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">Half Price Paddle</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog.html">Places to Paddleboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Rent My Paddleboards When I’m Not Using Them!</h1>
+            <p>Half the cost, zero pretense. Just bring your sense of humor and $50.</p>
+            <button onclick="window.location.href='#book-now'">Book Now</button>
+        </div>
+    </section>
+
+    
+    <section class="booking" id="book-now">
+        <div class="container">
+            <h2>Check Availability</h2>
+            <form id="booking-form">
+                <label for="date">Select a Date:</label>
+                <input type="date" id="date" name="date">
+                <button type="submit">Check Availability</button>
+            </form>
+            <div id="availability-message"></div>
+        </div>
+    </section>
+
+    
+    <section class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <h3>Step 1</h3>
+                    <p>Book a time below.</p>
+                </div>
+                <div class="step">
+                    <h3>Step 2</h3>
+                    <p>Show up at my house (address hidden until booked).</p>
+                </div>
+                <div class="step">
+                    <h3>Step 3</h3>
+                    <p>Sign the waiver and take off!</p>
+                </div>
+                <div class="step">
+                    <h3>Step 4</h3>
+                    <p>Return the boards before sunset.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="blog-preview">
+        <div class="container">
+            <h2>Explore Traverse City’s Best Paddling Spots</h2>
+            <div class="posts">
+                <a href="blog.html#elk-river" class="post-preview">
+                    <img src="images/sleeping-bear-dunes-paddleboarding.jpg" alt="Rent Stand Up Paddle">
+                    <h3>Elk River: A Serene Escape</h3>
+                </a>
+                <a href="blog.html#grand-traverse-bay" class="post-preview">
+                    <img src="images/grand-traverse-bay-paddle.jpg" alt="Grand Traverse Bay Paddleboard Rentals">
+                    <h3>Grand Traverse Bay: Urban Adventures</h3>
+                </a>
+                <a href="blog.html#boardman-river" class="post-preview">
+                    <img src="images/boardman-river-family-paddle.jpg" alt="Boardman River Paddleboard Rent">
+                    <h3>Boardman River: Family-Friendly Paddling</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 Half Price Paddle. All rights reserved.</p>
+            <p>Contact: <a href="mailto:wordena16@gmail.com">wordena16@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
