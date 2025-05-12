@@ -5,70 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Best Paddleboarding Spots in Traverse City | Half Price Paddle</title>
     <meta name="description" content="Discover the top paddleboarding spots in Traverse City, Michigan. Find hidden gems and popular routes for your adventure.">
-	<meta name="keywords" content="Traverse City paddleboard rental, cheap inflatable paddleboard, paddleboard for rent Traverse City">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <meta name="keywords" content="Traverse City paddleboard rental, cheap inflatable paddleboard, paddleboard for rent Traverse City">
     
-    <nav>
-        <div class="container">
-            <a href="/" class="logo">Half Price Paddle</a>
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/blog.html">Places to Paddleboard</a></li>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="font-sans text-gray-800">
+    
+    <nav class="bg-green-500 p-4">
+        <div class="container mx-auto flex items-center justify-between">
+            <a href="/" class="text-white text-2xl font-bold">Half Price Paddle</a>
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="/" class="text-white hover:text-gray-200">Home</a></li>
+                <li><a href="/blog.html" class="text-white hover:text-gray-200">Places to Paddleboard</a></li>
             </ul>
         </div>
     </nav>
 
     
-    <section class="blog-header">
-        <div class="container">
-            <h1>Explore Traverse City’s Best Paddling Spots</h1>
-            <p>Discover the best places to paddleboard in Traverse City, Michigan.</p>
+    <section class="bg-green-500 py-12">
+        <div class="container mx-auto px-6 text-white">
+            <h1 class="text-3xl font-extrabold mb-4">Explore Traverse City’s Best Paddling Spots</h1>
+            <p class="text-lg">Discover the best places to paddleboard in Traverse City, Michigan.</p>
         </div>
     </section>
 
     
-    <section class="blog-posts">
-        <div class="container">
-            
+    <section class="py-12">
+        <div class="container mx-auto px-6">
             <div class="post" id="elk-river">
-                <h2>Elk River: A Serene Escape</h2>
-                <img src="images/sleeping-bear-dunes-paddleboarding.jpg" alt="Paddleboarding in the Sleeping Bear Dunes near Traverse City">
-                <p>Elk River offers calm waters surrounded by towering pines and wildlife. Perfect for a quiet morning paddle.</p>
-                <a href="#elk-river" class="read-more">Read More</a>
+                <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold mb-4">Elk River: A Serene Escape</h2>
+                    <img src="images/sleeping-bear-dunes-paddleboarding.jpg" alt="Elk River" class="w-full h-64 object-cover mb-4 rounded-t-lg">
+                    <p class="text-gray-600 mb-4">Elk River offers calm waters surrounded by towering pines and wildlife. Perfect for a quiet morning paddle.</p>
+                    <a href="#elk-river" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition">Read More</a>
+                </div>
             </div>
 
-            
             <div class="post" id="grand-traverse-bay">
-                <h2>Grand Traverse Bay: Urban Adventures</h2>
-                <img src="images/grand-traverse-bay-paddle.jpg" alt="Grand Traverse Bay Stand Up Paddleboard Rentals">
-                <p>Explore the bustling Grand Traverse Bay for a mix of city views and open water.</p>
-                <a href="#grand-traverse-bay" class="read-more">Read More</a>
+                <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold mb-4">Grand Traverse Bay: Urban Adventures</h2>
+                    <img src="images/grand-traverse-bay-paddle.jpg" alt="Grand Traverse Bay" class="w-full h-64 object-cover mb-4 rounded-t-lg">
+                    <p class="text-gray-600 mb-4">Explore the bustling Grand Traverse Bay for a mix of city views and open water.</p>
+                    <a href="#grand-traverse-bay" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition">Read More</a>
+                </div>
             </div>
 
-            
             <div class="post" id="boardman-river">
-                <h2>Boardman River: Family-Friendly Paddling</h2>
-                <img src="images/boardman-river-family-paddle.jpg" alt="Boardman River Paddleboarding Rental">
-                <p>Family-friendly routes and gentle currents make Boardman River ideal for beginners.</p>
-                <a href="#boardman-river" class="read-more">Read More</a>
+                <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold mb-4">Boardman River: Family-Friendly Paddling</h2>
+                    <img src="images/boardman-river-family-paddle.jpg" alt="Boardman River" class="w-full h-64 object-cover mb-4 rounded-t-lg">
+                    <p class="text-gray-600 mb-4">Family-friendly routes and gentle currents make Boardman River ideal for beginners.</p>
+                    <a href="#boardman-river" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition">Read More</a>
+                </div>
             </div>
         </div>
     </section>
 
     
-    <button onclick="topFunction()" id="back-to-top">↑ Back to Top</button>
+    <button onclick="topFunction()" id="back-to-top" class="fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-full transition hover:bg-green-600">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
 
-    <footer>
-        <div class="container">
-            <p>© 2023 Half Price Paddle. All rights reserved.</p>
-            <p>Contact: <a href="mailto:wordena16@gmail.com">wordena16@gmail.com</a></p>
+    
+    <footer class="bg-gray-800 text-white py-6 mt-12">
+        <div class="container mx-auto px-6 flex flex-col items-center">
+            <p class="mb-2">© 2025 Half Price Paddle. All rights reserved.</p>
+            <a href="mailto:wordena16@gmail.com" class="text-gray-300 hover:text-gray-100 transition">Contact: wordena16@gmail.com</a>
         </div>
     </footer>
 
     <script>
-        // Simple scroll-to-top button
+        // Back-to-top functionality
         function topFunction() {
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
