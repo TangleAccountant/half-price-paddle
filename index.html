@@ -26,14 +26,14 @@
             <p class="text-lg mb-6">Half the cost, zero pretense. Just bring your sense of humor and $50.</p>
             <form id="booking-form" class="max-w-md mx-auto mb-6">
                 <label class="block mb-2 text-lg" for="date">Select a Date:</label>
-                <input type="date" id="date" name="date" class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-green-500">
+                <input type="date" id="date" name="date" class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-green-500 text-black">
                 <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg transition duration-200">Check Availability</button>
             </form>
             <div id="availability-message" class="text-center text-green-500"></div>
         </div>
     </section>
 
-    <section class="py-12">
+    <section id="book-now" class="bg-gray-100 py-12">
         <div class="container mx-auto px-6">
             <h2 class="text-2xl font-bold mb-8">How It Works</h2>
             <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -87,6 +87,33 @@
         </div>
     </footer>
 
-    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const form = document.getElementById('booking-form');
+            const dateInput = document.getElementById('date');
+            const availabilityMessage = document.getElementById('availability-message');
+
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                const selectedDate = dateInput.value;
+                try {
+                    const response = await fetch('bookings.json');
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    const bookingsData = await response.json();
+                    const available = bookingsData[selectedDate] || 0;
+                    if (available > 0) {
+                        availabilityMessage.innerHTML = `<p class="text-green-600">✅ ${available} board(s) available!</p>`;
+                    } else {
+                        availabilityMessage.innerHTML = `<p class="text-red-600">⚠️ All boards booked for ${selectedDate}</p>`;
+                    }
+                } catch (error) {
+                    console.error("Error fetching data:", error);
+                    availabilityMessage.innerHTML = `<p class="text-red-600">⚠️ Error checking availability.</p>`;
+                }
+            });
+        });
+    </script>
 </body>
 </html>
