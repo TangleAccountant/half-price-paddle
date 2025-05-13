@@ -42,13 +42,12 @@
     <section id="book-now" class="bg-gray-100 py-12">
         <div class="container mx-auto px-6">
             <h2 class="text-2xl font-bold mb-8">Check Availability</h2>
-            <form class="max-w-md mx-auto mb-6">
-                <label for="date" class="block mb-2 text-lg">Select a Date:</label>
-                
-                <!-- Flatpickr Input -->
-                <input type="text" id="date" class="flatpickr-input w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-green-500">
-                <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg transition duration-200">Check Availability</button>
-            </form>
+        <form id="booking-form" class="max-w-md mx-auto mb-6">
+    
+            <label class="block mb-2 text-lg">Select a Date:</label>
+            <input type="text" id="date" class="flatpickr-input w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-green-500">
+            <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg transition duration-200">Check Availability</button>
+        </form>
             <div id="availability-message" class="text-center text-green-500"></div>
         </div>
     </section>
