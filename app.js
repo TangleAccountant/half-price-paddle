@@ -1,28 +1,34 @@
-document.addEventListener('DOMContentLoaded', async () => {
-    const checkButton = document.getElementById('check-availability');
-    const dateInput = document.getElementById('date');
-    const availabilityMessage = document.getElementById('availability-message');
+document.addEventListener('DOMContentLoaded', () => {
+  const checkButton = document.getElementById('check-availability');
+  const dateInput = document.getElementById('date');
+  const availabilityMessage = document.getElementById('availability-message');
 
-    checkButton.addEventListener('click', async () => {
-        const selectedDate = dateInput.value;
-        if (!selectedDate) {
-            alert("Please select a date!");
-            return;
-        }
+  checkButton.addEventListener('click', async () => {
+    const selectedDate = dateInput.value;
 
-        try {
-            const response = await fetch('bookings.json');
-            const bookingsData = await response.json();
-            const available = bookingsData[selectedDate] || 0;
+    if (!selectedDate) {
+      availabilityMessage.innerHTML = `
+        <p class="text-red-600 font-semibold">⚠️ Please select a date!</p>
+      `;
+      return;
+    }
 
-            if (available > 0) {
-                availabilityMessage.innerHTML = `<p class="text-green-600">✅ ${available} board(s) available!</p>`;
-            } else {
-                availabilityMessage.innerHTML = `<p class="text-red-600">⚠️ All boards booked for ${selectedDate}</p>`;
-            }
-        } catch (error) {
-            console.error("Error:", error);
-            availabilityMessage.innerHTML = `<p class="text-red-600">⚠️ Error checking availability.</p>`;
-        }
-    });
+    try {
+      const response = await fetch('bookings.json');
+      if (!response.ok) throw new Error("Failed to load bookings");
+      
+      const bookingsData = await response.json();
+      const available = bookingsData[selectedDate] ?? 0; // Use nullish coalescing
+
+      availabilityMessage.innerHTML = available > 0 
+        ? `<p class="text-green-600 font-semibold">✅ ${available} board(s) available!</p>`
+        : `<p class="text-red-600 font-semibold">⚠️ All boards booked for ${selectedDate}</p>`;
+
+    } catch (error) {
+      console.error("Error:", error);
+      availabilityMessage.innerHTML = `
+        <p class="text-red-600 font-semibold">⚠️ Error checking availability. Try again later.</p>
+      `;
+    }
+  });
 });
