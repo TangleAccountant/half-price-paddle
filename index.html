@@ -19,80 +19,62 @@
         </div>
     </nav>
 
+    
     <section class="relative h-screen flex items-center justify-center text-white">
         <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/traverse-city-paddleboard-hero.jpg');"></div>
-        <div class="container z-10 px-6">
+        <div class="container z-10 px-6 text-center">
             <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Rent My Paddleboards When I’m Not Using Them!</h1>
             <p class="text-lg mb-6">Half the cost, zero pretense. Just bring your sense of humor and $50.</p>
-            </div>
- </section>
-
- <section id="booking-form" class="bg-gray-100 py-12">      
-     <div class="container mx-auto px-6">
-<form id="booking-form" class="max-w-md mx-auto mb-6">
-    <label class="block mb-2 text-lg" for="date">Select a Date:</label>
-    <input type="date" id="date" name="date" class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-green-500 text-black">
-    
-    <button type="button" id="check-availability" class="w-full bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg transition duration-200">Check Availability</button>
-</form>
-            <div id="availability-message" class="text-center text-green-500"></div>
+            <button onclick="window.location.href='#availability'" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg transition duration-200">
+                Check Availability Now
+            </button>
         </div>
     </section>
 
-    <section id="book-now" class="bg-gray-100 py-12">
+    
+    <section id="availability" class="bg-gray-50 py-12">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl font-bold mb-8 text-center">Check Paddleboard Availability</h2>
+            <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
+                <form id="booking-form">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="date">
+                            Select Your Rental Date:
+                        </label>
+                        <input 
+                            type="date" 
+                            id="date" 
+                            class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-green-500 text-black"
+                            min="2025-05-01"
+                            max="2025-09-30"
+                            required
+                        >
+                    </div>
+                    <button 
+                        type="button"
+                        id="check-availability"
+                        class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition duration-200"
+                    >
+                        Check Availability
+                    </button>
+                </form>
+                <div id="availability-message" class="mt-4 text-center"></div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="py-12">
         <div class="container mx-auto px-6">
             <h2 class="text-2xl font-bold mb-8">How It Works</h2>
             <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-bold mb-2">Step 1</h3>
-                    <p>Book a time below.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-bold mb-2">Step 2</h3>
-                    <p>Show up at my house (address hidden until booked).</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-bold mb-2">Step 3</h3>
-                    <p>Sign the waiver and take off!</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-bold mb-2">Step 4</h3>
-                    <p>Return the boards before sunset.</p>
-                </div>
+                
             </div>
         </div>
     </section>
 
-    <section class="py-12 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-2xl font-bold mb-8">Explore Traverse City’s Best Paddling Spots</h2>
-            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                <a href="blog.html#elk-river" class="group block bg-white p-4 rounded-lg shadow-md transition hover:shadow-lg">
-                    <img src="images/sleeping-bear-dunes-paddleboarding.jpg" alt="Elk River Paddleboarding" class="w-full h-48 object-cover mb-4 rounded-t-lg">
-                    <h3 class="text-lg font-bold mb-2">Elk River: A Serene Escape</h3>
-                    <p class="text-gray-600 line-clamp-2">Calm waters surrounded by towering pines and wildlife.</p>
-                </a>
-                <a href="blog.html#grand-traverse-bay" class="group block bg-white p-4 rounded-lg shadow-md transition hover:shadow-lg">
-                    <img src="images/grand-traverse-bay-paddle.jpg" alt="Grand Traverse Bay" class="w-full h-48 object-cover mb-4 rounded-t-lg">
-                    <h3 class="text-lg font-bold mb-2">Grand Traverse Bay: Urban Adventures</h3>
-                    <p class="text-gray-600 line-clamp-2">Bustling bay with city views and open water.</p>
-                </a>
-                <a href="blog.html#boardman-river" class="group block bg-white p-4 rounded-lg shadow-md transition hover:shadow-lg">
-                    <img src="images/boardman-river-family-paddle.jpg" alt="Boardman River" class="w-full h-48 object-cover mb-4 rounded-t-lg">
-                    <h3 class="text-lg font-bold mb-2">Boardman River: Family-Friendly Paddling</h3>
-                    <p class="text-gray-600 line-clamp-2">Gentle currents perfect for beginners.</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-gray-800 text-white py-6 mt-12">
-        <div class="container mx-auto px-6 flex flex-col items-center">
-            <p class="mb-2">© 2025 Half Price Paddle. All rights reserved.</p>
-            <a href="mailto:wordena16@gmail.com" class="text-gray-300 hover:text-gray-100 transition">Contact: wordena16@gmail.com</a>
-        </div>
-    </footer>
-
+    
+    
     <script src="app.js"></script>
 </body>
 </html>
