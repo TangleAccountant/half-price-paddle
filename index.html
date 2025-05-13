@@ -4,31 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'">
-    <title>Half Price Paddle - Traverse City</title>
+    <meta name="description" content="Rent inflatable paddleboards in Traverse City at half the cost! Find the best spots and book directly from my calendar.">
+    <meta name="keywords" content="Traverse City paddleboard rental, cheap inflatable paddleboard, paddleboard for rent Traverse City">
+    <title>Half Price Paddle - Affordable Paddleboard Rentals in Traverse City</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .step-number {
+            background: linear-gradient(45deg, #48bb78, #38a169);
+        }
+    </style>
 </head>
 <body class="font-sans text-gray-800">
-    <nav class="bg-green-500 p-4">
+    <nav class="bg-green-500 p-4 sticky top-0 z-50">
         <div class="container mx-auto flex items-center justify-between">
             <a href="/" class="text-white text-2xl font-bold">Half Price Paddle</a>
             <div class="hidden md:flex space-x-8">
                 <a href="/" class="text-white hover:text-gray-200">Home</a>
                 <a href="/blog.html" class="text-white hover:text-gray-200">Locations</a>
+                <a href="#book-now" class="text-white hover:text-gray-200">Book</a>
             </div>
         </div>
     </nav>
 
-    
     <section class="relative h-screen flex items-center justify-center text-white">
         <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/hero.jpg');"></div>
         <div class="container z-10 px-6 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">Paddleboard Rentals</h1>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Rent My Paddleboards When I'm Not Using Them!</h1>
             <p class="text-xl mb-8">$50/day - No Experience Needed</p>
+            <button onclick="document.getElementById('book-now').scrollIntoView({behavior: 'smooth'})" 
+                    class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg">
+                Book Now
+            </button>
         </div>
     </section>
 
-    
-    <section id="availability" class="bg-gray-50 py-16">
+    <section id="book-now" class="bg-gray-50 py-16">
         <div class="container mx-auto px-6">
             <div class="max-w-md mx-auto bg-white p-8 rounded-xl shadow-lg">
                 <h2 class="text-3xl font-bold mb-6 text-center">Check Availability</h2>
@@ -36,21 +46,90 @@
                     <input 
                         type="date" 
                         id="date"
-                        class="w-full p-3 border-2 border-gray-200 rounded-lg"
+                        class="w-full p-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-green-500"
                         min="2025-05-01"
                         max="2025-09-30"
                     >
                     <button 
                         id="check-availability"
-                        class="w-full bg-green-500 text-white py-3 px-6 rounded-lg hover:bg-green-600 transition"
+                        class="w-full bg-green-500 text-white py-3 px-6 rounded-lg hover:bg-green-600 transition duration-300 transform hover:scale-105"
                     >
                         Check Boards
                     </button>
-                    <div id="availability-message" class="text-center"></div>
+                    <div id="availability-message" class="text-center font-semibold"></div>
                 </div>
             </div>
         </div>
     </section>
+
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center text-gray-800">How It Works</h2>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="bg-green-50 p-6 rounded-xl text-center transform transition hover:scale-105">
+                    <div class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center mx-auto mb-4 step-number">1</div>
+                    <h3 class="text-xl font-semibold mb-2">Book a Time</h3>
+                    <p>Select your date and check availability</p>
+                </div>
+                <div class="bg-green-50 p-6 rounded-xl text-center transform transition hover:scale-105">
+                    <div class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center mx-auto mb-4 step-number">2</div>
+                    <h3 class="text-xl font-semibold mb-2">Address Revealed</h3>
+                    <p>Get my home address upon booking</p>
+                </div>
+                <div class="bg-green-50 p-6 rounded-xl text-center transform transition hover:scale-105">
+                    <div class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center mx-auto mb-4 step-number">3</div>
+                    <h3 class="text-xl font-semibold mb-2">Sign Waiver</h3>
+                    <p>Quick safety check before departure</p>
+                </div>
+                <div class="bg-green-50 p-6 rounded-xl text-center transform transition hover:scale-105">
+                    <div class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center mx-auto mb-4 step-number">4</div>
+                    <h3 class="text-xl font-semibold mb-2">Return Boards</h3>
+                    <p>Sunset is the cutoff time</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center text-gray-800">Explore Traverse City’s Best Paddling Spots</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <a href="blog.html#elk-river" class="group block">
+                    <div class="overflow-hidden rounded-lg">
+                        <img src="images/sleeping-bear-dunes-paddleboarding.jpg" alt="Rent Stand Up Paddle" class="w-full h-48 object-cover transform transition duration-500 group-hover:scale-110">
+                    </div>
+                    <h3 class="mt-4 text-xl font-semibold text-green-700 group-hover:text-green-900">Elk River: A Serene Escape</h3>
+                </a>
+                <a href="blog.html#grand-traverse-bay" class="group block">
+                    <div class="overflow-hidden rounded-lg">
+                        <img src="images/grand-traverse-bay-paddle.jpg" alt="Grand Traverse Bay Paddleboard Rentals" class="w-full h-48 object-cover transform transition duration-500 group-hover:scale-110">
+                    </div>
+                    <h3 class="mt-4 text-xl font-semibold text-green-700 group-hover:text-green-900">Grand Traverse Bay: Urban Adventures</h3>
+                </a>
+                <a href="blog.html#boardman-river" class="group block">
+                    <div class="overflow-hidden rounded-lg">
+                        <img src="images/boardman-river-family-paddle.jpg" alt="Boardman River Paddleboard Rent" class="w-full h-48 object-cover transform transition duration-500 group-hover:scale-110">
+                    </div>
+                    <h3 class="mt-4 text-xl font-semibold text-green-700 group-hover:text-green-900">Boardman River: Family-Friendly Paddling</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-green-500 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-4">Half Price Paddle</h3>
+                    <p class="text-green-100">Rent inflatable paddleboards at half the cost</p>
+                </div>
+                <div>
+                    <p class="mb-4">&copy; 2025 Half Price Paddle. All rights reserved.</p>
+                    <p>Contact: <a href="mailto:wordena16@gmail.com" class="text-white underline hover:text-green-200">wordena16@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="app.js"></script>
 </body>
