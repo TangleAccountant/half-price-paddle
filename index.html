@@ -9,44 +9,74 @@
     <title>Half Price Paddle - Affordable Paddleboard Rentals in Traverse City</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        .step-number {
-            background: linear-gradient(45deg, #48bb78, #38a169);
+        .hero-image {
+            background-image: url('images/traverse-city-paddleboard-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .glass-card {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        .nature-gradient {
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfeff 100%);
         }
     </style>
 </head>
 <body class="font-sans text-gray-800">
-    <nav class="bg-green-500 p-4 sticky top-0 z-50">
-        <div class="container mx-auto flex items-center justify-between">
-            <a href="/" class="text-white text-2xl font-bold">Half Price Paddle</a>
-            <div class="hidden md:flex space-x-8">
-                <a href="/" class="text-white hover:text-gray-200">Home</a>
-                <a href="/blog.html" class="text-white hover:text-gray-200">Locations</a>
-                <a href="#book-now" class="text-white hover:text-gray-200">Book</a>
+    <nav class="bg-green-600 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="/" class="text-2xl font-bold tracking-tight">Half Price Paddle</a>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-white focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="/" class="hover:text-green-200 transition duration-300">Home</a>
+                    <a href="/blog.html" class="hover:text-green-200 transition duration-300">Locations</a>
+                    <a href="#book-now" class="hover:text-green-200 transition duration-300">Book Now</a>
+                </div>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden mt-2 pb-2">
+                <a href="/" class="block py-2 hover:text-green-200 transition duration-300">Home</a>
+                <a href="/blog.html" class="block py-2 hover:text-green-200 transition duration-300">Locations</a>
+                <a href="#book-now" class="block py-2 hover:text-green-200 transition duration-300">Book Now</a>
             </div>
         </div>
     </nav>
 
-    <section class="relative h-screen flex items-center justify-center text-white">
-        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/hero.jpg');"></div>
-        <div class="container z-10 px-6 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">Rent My Paddleboards When I'm Not Using Them!</h1>
-            <p class="text-xl mb-8">$50/day - No Experience Needed</p>
-            <button onclick="document.getElementById('book-now').scrollIntoView({behavior: 'smooth'})" 
-                    class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg">
-                Book Now
-            </button>
+    <section class="relative min-h-screen flex items-center hero-image">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="container mx-auto px-6 relative z-10 py-24">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+                    Rent Premium Paddleboards at Half Price
+                </h1>
+                <p class="text-xl text-white mb-8 max-w-lg drop-shadow-md">
+                    Experience Traverse City's waterways with our top-quality inflatable paddleboards
+                </p>
+                <button onclick="document.getElementById('book-now').scrollIntoView({behavior: 'smooth'})" 
+                        class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg transform hover:scale-105">
+                    Check Availability
+                </button>
+            </div>
         </div>
     </section>
 
-    <section id="book-now" class="bg-gray-50 py-16">
+    <section id="book-now" class="py-16 nature-gradient">
         <div class="container mx-auto px-6">
-            <div class="max-w-md mx-auto bg-white p-8 rounded-xl shadow-lg">
-                <h2 class="text-3xl font-bold mb-6 text-center">Check Availability</h2>
+            <div class="max-w-md mx-auto glass-card p-8 rounded-2xl shadow-xl">
+                <h2 class="text-3xl font-bold mb-6 text-center text-gray-800">Check Availability</h2>
                 <div class="space-y-4">
                     <input 
                         type="date" 
                         id="date"
-                        class="w-full p-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-green-500"
+                        class="w-full p-3 border-2 border-green-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none transition duration-300"
                         min="2025-05-01"
                         max="2025-09-30"
                     >
@@ -56,7 +86,7 @@
                     >
                         Check Boards
                     </button>
-                    <div id="availability-message" class="text-center font-semibold"></div>
+                    <div id="availability-message" class="text-center font-semibold mt-4 py-2 rounded-lg"></div>
                 </div>
             </div>
         </div>
@@ -66,49 +96,66 @@
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold mb-12 text-center text-gray-800">How It Works</h2>
             <div class="grid md:grid-cols-4 gap-8">
-                <div class="bg-green-50 p-6 rounded-xl text-center transform transition hover:scale-105">
-                    <div class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center mx-auto mb-4 step-number">1</div>
-                    <h3 class="text-xl font-semibold mb-2">Book a Time</h3>
-                    <p>Select your date and check availability</p>
+                <div class="bg-green-50 p-6 rounded-xl text-center transform transition hover:scale-105 hover:shadow-lg">
+                    <div class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Select Date</h3>
+                    <p>Choose your preferred date and check availability</p>
                 </div>
-                <div class="bg-green-50 p-6 rounded-xl text-center transform transition hover:scale-105">
-                    <div class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center mx-auto mb-4 step-number">2</div>
-                    <h3 class="text-xl font-semibold mb-2">Address Revealed</h3>
-                    <p>Get my home address upon booking</p>
+                <div class="bg-green-50 p-6 rounded-xl text-center transform transition hover:scale-105 hover:shadow-lg">
+                    <div class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Get Address</h3>
+                    <p>Location details shared after successful booking</p>
                 </div>
-                <div class="bg-green-50 p-6 rounded-xl text-center transform transition hover:scale-105">
-                    <div class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center mx-auto mb-4 step-number">3</div>
-                    <h3 class="text-xl font-semibold mb-2">Sign Waiver</h3>
+                <div class="bg-green-50 p-6 rounded-xl text-center transform transition hover:scale-105 hover:shadow-lg">
+                    <div class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Safety Briefing</h3>
                     <p>Quick safety check before departure</p>
                 </div>
-                <div class="bg-green-50 p-6 rounded-xl text-center transform transition hover:scale-105">
-                    <div class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center mx-auto mb-4 step-number">4</div>
+                <div class="bg-green-50 p-6 rounded-xl text-center transform transition hover:scale-105 hover:shadow-lg">
+                    <div class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"></path>
+                        </svg>
+                    </div>
                     <h3 class="text-xl font-semibold mb-2">Return Boards</h3>
-                    <p>Sunset is the cutoff time</p>
+                    <p>Sunset is our standard return time</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-16 bg-gray-50">
+    <section class="py-16 bg-green-50">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold mb-12 text-center text-gray-800">Explore Traverse City’s Best Paddling Spots</h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <a href="blog.html#elk-river" class="group block">
-                    <div class="overflow-hidden rounded-lg">
-                        <img src="images/sleeping-bear-dunes-paddleboarding.jpg" alt="Rent Stand Up Paddle" class="w-full h-48 object-cover transform transition duration-500 group-hover:scale-110">
+                    <div class="overflow-hidden rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
+                        <img src="images/sleeping-bear-dunes-paddleboarding.jpg" alt="Rent Stand Up Paddle" class="w-full h-48 object-cover">
                     </div>
                     <h3 class="mt-4 text-xl font-semibold text-green-700 group-hover:text-green-900">Elk River: A Serene Escape</h3>
                 </a>
                 <a href="blog.html#grand-traverse-bay" class="group block">
-                    <div class="overflow-hidden rounded-lg">
-                        <img src="images/grand-traverse-bay-paddle.jpg" alt="Grand Traverse Bay Paddleboard Rentals" class="w-full h-48 object-cover transform transition duration-500 group-hover:scale-110">
+                    <div class="overflow-hidden rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
+                        <img src="images/grand-traverse-bay-paddle.jpg" alt="Grand Traverse Bay Paddleboard Rentals" class="w-full h-48 object-cover">
                     </div>
                     <h3 class="mt-4 text-xl font-semibold text-green-700 group-hover:text-green-900">Grand Traverse Bay: Urban Adventures</h3>
                 </a>
                 <a href="blog.html#boardman-river" class="group block">
-                    <div class="overflow-hidden rounded-lg">
-                        <img src="images/boardman-river-family-paddle.jpg" alt="Boardman River Paddleboard Rent" class="w-full h-48 object-cover transform transition duration-500 group-hover:scale-110">
+                    <div class="overflow-hidden rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
+                        <img src="images/boardman-river-family-paddle.jpg" alt="Boardman River Paddleboard Rent" class="w-full h-48 object-cover">
                     </div>
                     <h3 class="mt-4 text-xl font-semibold text-green-700 group-hover:text-green-900">Boardman River: Family-Friendly Paddling</h3>
                 </a>
@@ -116,21 +163,63 @@
         </div>
     </section>
 
-    <footer class="bg-green-500 text-white py-12">
+    <footer class="bg-green-600 text-white py-12">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between">
                 <div class="mb-8 md:mb-0">
                     <h3 class="text-2xl font-bold mb-4">Half Price Paddle</h3>
-                    <p class="text-green-100">Rent inflatable paddleboards at half the cost</p>
+                    <p class="text-green-100">Connecting adventurers with quality equipment at unbeatable prices</p>
                 </div>
                 <div>
                     <p class="mb-4">&copy; 2025 Half Price Paddle. All rights reserved.</p>
-                    <p>Contact: <a href="mailto:wordena16@gmail.com" class="text-white underline hover:text-green-200">wordena16@gmail.com</a></p>
+                    <p>Contact: <a href="mailto:wordena16@gmail.com" class="text-white hover:text-green-200 transition duration-300">wordena16@gmail.com</a></p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="app.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Existing availability check functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkBtn = document.getElementById('check-availability');
+            const dateInput = document.getElementById('date');
+            const messageDiv = document.getElementById('availability-message');
+
+            const showMessage = (text, isError = false) => {
+                messageDiv.textContent = text;
+                messageDiv.className = `text-center font-semibold mt-4 py-2 rounded-lg ${isError ? 'bg-red-100 text-red-600' : 'bg-green-100 text-green-600'}`;
+            };
+
+            checkBtn.addEventListener('click', async () => {
+                try {
+                    const selectedDate = dateInput.value;
+                    if (!selectedDate) {
+                        showMessage('Please select a date first!', true);
+                        return;
+                    }
+
+                    const response = await fetch('bookings.json');
+                    if (!response.ok) throw new Error('Failed to load availability data');
+                    
+                    const bookings = await response.json();
+                    const available = bookings[selectedDate] ?? 0;
+
+                    if (available > 0) {
+                        showMessage(`✅ ${available} board${available > 1 ? 's' : ''} available!`);
+                    } else {
+                        showMessage('⚠️ Fully booked for this date', true);
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    showMessage('⚠️ Service unavailable - please try again later', true);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
