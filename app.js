@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const availabilityMessage = document.getElementById('availability-message');
 
     form.addEventListener('submit', async (event) => {
-        event.preventDefault();
+        event.preventDefault(); // Prevent the default form submission behavior
         const selectedDate = dateInput.value;
         try {
             const response = await fetch('bookings.json');
