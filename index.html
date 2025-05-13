@@ -24,11 +24,17 @@
         <div class="container z-10 px-6">
             <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Rent My Paddleboards When I’m Not Using Them!</h1>
             <p class="text-lg mb-6">Half the cost, zero pretense. Just bring your sense of humor and $50.</p>
-            <form id="booking-form" class="max-w-md mx-auto mb-6">
-                <label class="block mb-2 text-lg" for="date">Select a Date:</label>
-                <input type="date" id="date" name="date" class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-green-500 text-black">
-                <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg transition duration-200">Check Availability</button>
-            </form>
+            </div>
+ </section>
+
+ <section id="booking-form" class="bg-gray-100 py-12">      
+     <div class="container mx-auto px-6">
+<form id="booking-form" class="max-w-md mx-auto mb-6">
+    <label class="block mb-2 text-lg" for="date">Select a Date:</label>
+    <input type="date" id="date" name="date" class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-green-500 text-black">
+    
+    <button type="button" id="check-availability" class="w-full bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg transition duration-200">Check Availability</button>
+</form>
             <div id="availability-message" class="text-center text-green-500"></div>
         </div>
     </section>
